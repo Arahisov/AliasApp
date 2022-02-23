@@ -1,17 +1,26 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    
+    //MARK: - Properties
+    let joke = Joke()
+    
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Hello group 2")
-    }
-    @IBAction func rulesPressed(_ sender: UIButton) {
-        print(#function)
     }
     
+    //MARK: - @IBActions
+    @IBAction func rulesPressed(_ sender: UIButton) {
+        showMessage()
+    }
     @IBAction func playPressed(_ sender: UIButton) {
-        print(#function)
+        showMessage()
+    }
+    
+    //MARK: - Functions
+    private func showMessage() {
+        joke.showJokeAlert(to: self)
     }
 }
 
