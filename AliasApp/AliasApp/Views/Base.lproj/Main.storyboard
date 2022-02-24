@@ -116,45 +116,49 @@
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgH-lh-VdD">
                                                 <rect key="frame" x="220" y="200" width="180" height="180"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" cornerStyle="small">
+                                                <buttonConfiguration key="configuration" style="plain" title="Physics" cornerStyle="small">
                                                     <backgroundConfiguration key="background" image="PhysicsButton"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="physicsButton:" destination="GUd-md-Xse" eventType="touchUpInside" id="Q01-bx-pCM"/>
+                                                    <action selector="Category:" destination="GUd-md-Xse" eventType="touchUpInside" id="tNr-1j-Kot"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msV-Qb-R1S">
                                                 <rect key="frame" x="22" y="200" width="180" height="180"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" cornerStyle="small">
+                                                <buttonConfiguration key="configuration" style="plain" title="Biology" cornerStyle="small">
                                                     <backgroundConfiguration key="background" image="BiologyButton"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="biologyButton:" destination="GUd-md-Xse" eventType="touchUpInside" id="VCa-H1-jg0"/>
+                                                    <action selector="Category:" destination="GUd-md-Xse" eventType="touchUpInside" id="RnM-nm-7KI"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxd-gd-wfv">
                                                 <rect key="frame" x="22" y="8" width="180" height="180"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" cornerStyle="small">
+                                                <buttonConfiguration key="configuration" style="plain" title="Science" cornerStyle="small">
                                                     <backgroundConfiguration key="background" image="ScienceButton"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="scienceButton:" destination="GUd-md-Xse" eventType="touchUpInside" id="Hg3-ek-fgC"/>
+                                                    <action selector="Category:" destination="GUd-md-Xse" eventType="touchUpInside" id="TAK-SG-ef7"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYt-UW-X99">
                                                 <rect key="frame" x="220" y="12" width="180" height="180"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" cornerStyle="small">
+                                                <buttonConfiguration key="configuration" style="plain" title="Chemistry" cornerStyle="small">
                                                     <backgroundConfiguration key="background" image="ChemistryButton"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="chemistryButton:" destination="GUd-md-Xse" eventType="touchUpInside" id="YpF-3a-7N2"/>
+                                                    <action selector="Category:" destination="GUd-md-Xse" eventType="touchUpInside" id="mSe-TI-cP8"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -171,25 +175,128 @@
                             <constraint firstItem="XHB-II-prr" firstAttribute="trailing" secondItem="upy-lO-tkX" secondAttribute="trailing" id="w0t-K6-H35"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="cgR-SK-8VR" kind="show" identifier="toGame" id="Bgl-Er-h3O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZPu-m5-KKR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="660.86956521739137" y="404.46428571428572"/>
+            <point key="canvasLocation" x="749" y="394"/>
         </scene>
         <!--Guess View Controller-->
         <scene sceneID="3Zr-ON-R5c">
             <objects>
                 <viewController id="cgR-SK-8VR" customClass="GuessViewController" customModule="AliasApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g6C-BO-JFm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Слово" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXZ-WF-k5E">
+                                <rect key="frame" x="107" y="70" width="200" height="78"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="XNy-BP-cjO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="60"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="760-VV-kxd">
+                                <rect key="frame" x="122.5" y="208" width="169.5" height="231"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vid-ac-7U9">
+                                        <rect key="frame" x="0.0" y="0.0" width="169.5" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="0Sv-k4-cfR"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="H62-pq-M39"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Правильно" cornerStyle="dynamic">
+                                            <backgroundConfiguration key="background" cornerRadius="15">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="24"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="answerPressed:" destination="cgR-SK-8VR" eventType="touchUpInside" id="N4w-wz-Rd9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="040-oK-rRj">
+                                        <rect key="frame" x="0.0" y="93" width="169.5" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="FoJ-7I-eh4"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="fB1-YA-Lc8"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Пропустить" cornerStyle="dynamic">
+                                            <backgroundConfiguration key="background" cornerRadius="15">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="24"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="answerPressed:" destination="cgR-SK-8VR" eventType="touchUpInside" id="suq-7f-5Ht"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zID-Qx-qjn">
+                                        <rect key="frame" x="0.0" y="186" width="169.5" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="Ahg-rq-d4z"/>
+                                            <constraint firstAttribute="height" constant="45" id="jNp-Fw-JYv"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Сбросить" cornerStyle="dynamic">
+                                            <backgroundConfiguration key="background" cornerRadius="15">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="24"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="answerPressed:" destination="cgR-SK-8VR" eventType="touchUpInside" id="Xe2-vG-38M"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="6ES-fv-fsO">
+                                <rect key="frame" x="20" y="474" width="107.5" height="36"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Счет:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Epw-hs-mcP">
+                                        <rect key="frame" x="0.0" y="0.0" width="79.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5c-O5-9sG">
+                                        <rect key="frame" x="86.5" y="0.0" width="21" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="f6e-9J-VTd"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="6ES-fv-fsO" firstAttribute="leading" secondItem="f6e-9J-VTd" secondAttribute="leading" constant="20" id="1OU-Dc-cwh"/>
+                            <constraint firstItem="760-VV-kxd" firstAttribute="centerX" secondItem="g6C-BO-JFm" secondAttribute="centerX" id="Esv-aJ-YDT"/>
+                            <constraint firstItem="760-VV-kxd" firstAttribute="top" secondItem="RXZ-WF-k5E" secondAttribute="bottom" constant="60" id="Gfz-tb-6kv"/>
+                            <constraint firstItem="RXZ-WF-k5E" firstAttribute="centerX" secondItem="g6C-BO-JFm" secondAttribute="centerX" id="JX5-Iv-TxU"/>
+                            <constraint firstItem="6ES-fv-fsO" firstAttribute="top" secondItem="760-VV-kxd" secondAttribute="bottom" constant="35" id="hTg-67-nHe"/>
+                            <constraint firstItem="RXZ-WF-k5E" firstAttribute="top" secondItem="f6e-9J-VTd" secondAttribute="top" constant="70" id="jex-nc-Ov9"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="OR7-9E-FGf"/>
+                    <connections>
+                        <outlet property="scoreLabel" destination="T5c-O5-9sG" id="NNk-wC-okH"/>
+                        <outlet property="worldLabel" destination="RXZ-WF-k5E" id="WoG-y7-hEC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qDe-Q0-1oY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1354" y="405"/>
+            <point key="canvasLocation" x="1526" y="394"/>
         </scene>
         <!--Rules View Controller-->
         <scene sceneID="oiO-Co-t0B">

@@ -17,6 +17,8 @@
 		6CA735F327C484DF0017A1E7 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA735F227C484DF0017A1E7 /* RulesViewController.swift */; };
 		6CA735F527C4852A0017A1E7 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA735F427C4852A0017A1E7 /* SelectionViewController.swift */; };
 		6CA735F727C485650017A1E7 /* GuessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA735F627C485650017A1E7 /* GuessViewController.swift */; };
+		C30FBDDF27C7B15800C3E05D /* AliasBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30FBDDE27C7B15700C3E05D /* AliasBrain.swift */; };
+		C37C2A6527C7E59B00317FE0 /* AliasModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37C2A6427C7E59B00317FE0 /* AliasModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		6CA735F227C484DF0017A1E7 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		6CA735F427C4852A0017A1E7 /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
 		6CA735F627C485650017A1E7 /* GuessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessViewController.swift; sourceTree = "<group>"; };
+		C30FBDDE27C7B15700C3E05D /* AliasBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AliasBrain.swift; sourceTree = "<group>"; };
+		C37C2A6427C7E59B00317FE0 /* AliasModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AliasModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				6C3264DF27C5E490001312E9 /* Joke.swift */,
+				C30FBDDE27C7B15700C3E05D /* AliasBrain.swift */,
+				C37C2A6427C7E59B00317FE0 /* AliasModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -183,11 +189,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C3264E027C5E490001312E9 /* Joke.swift in Sources */,
+				C30FBDDF27C7B15800C3E05D /* AliasBrain.swift in Sources */,
 				6CA735F727C485650017A1E7 /* GuessViewController.swift in Sources */,
 				6CA735F527C4852A0017A1E7 /* SelectionViewController.swift in Sources */,
 				6C3C74FF27C41B89000EF720 /* MainViewController.swift in Sources */,
 				6C3C74FB27C41B89000EF720 /* AppDelegate.swift in Sources */,
 				6CA735F327C484DF0017A1E7 /* RulesViewController.swift in Sources */,
+				C37C2A6527C7E59B00317FE0 /* AliasModel.swift in Sources */,
 				6C3C74FD27C41B89000EF720 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
