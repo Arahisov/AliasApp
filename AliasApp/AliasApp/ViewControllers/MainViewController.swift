@@ -3,11 +3,15 @@ import UIKit
 class MainViewController: UIViewController {
     
     //MARK: - Properties
-    let joke = Joke()
+    let jokeMessage = JokeMessage()
+    var jokeManager = JokeManager()
+    var jokeContent = ""
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        jokeManager.delegate = self
+        jokeManager.fetchJoke()
     }
     
     //MARK: - @IBActions
@@ -20,7 +24,16 @@ class MainViewController: UIViewController {
     
     //MARK: - Functions
     private func showMessage() {
-        joke.showJokeAlert(to: self)
+        jokeManager.fetchJoke()
+        jokeMessage.showJokeAlert(from: jokeContent, to: self)
+    }
+}
+
+extension MainViewController: JokeManagerDelegate {
+    func didUpdateJoke(_ jokeManager: JokeManager, joke: JokeModel) {
+        DispatchQueue.main.async {
+            self.jokeContent = joke.jokeContent
+        }
     }
 }
 
