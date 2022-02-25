@@ -8,7 +8,7 @@ class GuessViewController: UIViewController {
     var aliasBrain = AliasBrain()
     var score = 0
     var category = ""
-   
+
     
     // MARK: - initial screen
     override func viewDidLoad() {

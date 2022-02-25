@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 struct AliasBrain {
     
@@ -21,7 +22,7 @@ struct AliasBrain {
     var score = 0
     var word = "Слово"
     var lastword = ""
-    
+    var player: AVAudioPlayer!
     // MARK: - update word
     
     mutating func updateWord(with category: String) -> String {
@@ -57,19 +58,30 @@ struct AliasBrain {
 
     // MARK: - update score
     mutating func updateScore(title: String) -> Int {
-        if title == "Правильно" {
+       
+            if (title == "Правильно")&&(newArray.isEmpty != true) {
             score += 1
             for i in specialWords {
                 if word == i {
                     score += 4
                 }
+                audioPlayer(name: "G")
             }
-        } else if title == "Пропустить" {
+        } else if (title == "Пропустить")&&(newArray.isEmpty != true) {
             score -= 1
+            audioPlayer(name: "C")
         } else if title == "Сбросить" {
             score = 0
             newArray = []
         }
         return score
+    }
+    
+// MARK: - audioPlayer
+    
+    mutating func audioPlayer (name sound : String){
+        let url = Bundle.main.url(forResource: sound, withExtension:"wav")
+        player = try! AVAudioPlayer(contentsOf: url!)
+        player.play()
     }
 }
