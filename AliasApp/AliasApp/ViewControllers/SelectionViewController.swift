@@ -5,6 +5,10 @@ import UIKit
 
 class SelectionViewController: UIViewController {
     
+    var aliasBrain = AliasBrain()
+    var titleCategory = ""
+    var word = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -12,22 +16,34 @@ class SelectionViewController: UIViewController {
         
     }
     
-    
-    @IBAction func scienceButton(_ sender: UIButton) {
-        print("You chose the category Science")
+    @IBAction func Category(_ sender: UIButton) {
+        titleCategory = (sender.titleLabel?.text)!
+        performSegue(withIdentifier: "toGame", sender: self)
     }
     
-    @IBAction func chemistryButton(_ sender: UIButton) {
-        print("You chose the category Chemistry")
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toGame" {
+            let destinationVC = segue.destination as! GuessViewController
+            destinationVC.category = titleCategory
+        }
     }
     
-    @IBAction func biologyButton(_ sender: UIButton) {
-        print("You chose the category Biology")
-    }
-    
-    @IBAction func physicsButton(_ sender: UIButton) {
-        print("You chose the category Physics")
-    }
+//    @IBAction func scienceButton(_ sender: UIButton) {
+//        print("You chose the category Science")
+//    }
+//
+//    @IBAction func chemistryButton(_ sender: UIButton) {
+//        print("You chose the category Chemistry")
+//
+//    }
+//
+//    @IBAction func biologyButton(_ sender: UIButton) {
+//        print("You chose the category Biology")
+//    }
+//
+//    @IBAction func physicsButton(_ sender: UIButton) {
+//        print("You chose the category Physics")
+//    }
 
 }
 
