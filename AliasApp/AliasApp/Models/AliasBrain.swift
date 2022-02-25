@@ -16,23 +16,45 @@ struct AliasBrain {
     let category = ["Химия", "Наука", "Биология", "Физика"]
     let specialWords = ["Валентность", "Диссертация","Фотосинтез","Протон"]
     
+    var newArray = [String]()
     
     var score = 0
-    var word = ""
+    var word = "Слово"
+    var lastword = ""
     
     // MARK: - update word
     
     mutating func updateWord(with category: String) -> String {
         switch category {
+            
         case "Chemistry" : word = chemistryWords.randomElement()!
         case "Physics" : word = physicsWords.randomElement()!
         case "Biology" : word = biologyWords.randomElement()!
         case "Science" : word = scienceWords.randomElement()!
         default : return "no category"
         }
-        return word
+       
+        if newArray.contains(word) == false {
+            newArray.append(word)
+            print(newArray)
+            if let newword = newArray.last {
+                lastword = newword
+            }
+        } else {
+            if newArray.count < 7 {
+            print("повтор")
+            updateWord(with: category)
+            }
+            else {
+                lastword = "Игра окончена вы набрали \(score) баллов"
+                score = 0
+                newArray = []
+            }
+        }
+        return lastword
     }
     
+
     // MARK: - update score
     mutating func updateScore(title: String) -> Int {
         if title == "Правильно" {
@@ -46,6 +68,7 @@ struct AliasBrain {
             score -= 1
         } else if title == "Сбросить" {
             score = 0
+            newArray = []
         }
         return score
     }
