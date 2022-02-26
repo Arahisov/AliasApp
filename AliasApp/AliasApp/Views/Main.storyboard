@@ -175,32 +175,30 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M0W-Rk-n0M">
                                 <rect key="frame" x="10" y="188" width="394" height="150"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="wmN-QJ-kfj"/>
                                 </constraints>
-                                <string key="text">Игроки делятся на команды (от двух человек), решают вопрос очередности, договариваются внутри команды, кто будет объясняющим, а кто воспринимающим, определяют номера слов на карточках, ставят песочные часы и в течение минуты пытаются понять друг друга. Сколько успели отгадать — столько очков достанется.</string>
-                                <color key="textColor" systemColor="labelColor"/>
+                                <string key="text">Правила: игроки делятся на команды (от двух человек), решают вопрос очередности, договариваются внутри команды, кто будет объясняющим, а кто воспринимающим, определяют номера слов на карточках, ставят песочные часы и в течение минуты пытаются понять друг друга. Сколько успели отгадать — столько очков достанется.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Zj-8p-oWd">
                                 <rect key="frame" x="10" y="438" width="394" height="150"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="kay-aL-n9n"/>
                                 </constraints>
-                                <string key="text">Выдалась дождливая неделя. 
+                                <string key="text">Когда поиграть: выдалась дождливая неделя. 
  Вы пригласили в гости знакомых, но совершенно не знаете, чем их занять.
  Вам 13, когда Вы в компании, язык прилипает к небу, несмотря на то, что мыслей в голове полно.
  Вы хотите просто хорошо провести время.</string>
-                                <color key="textColor" systemColor="labelColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="azt-VL-oOI"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                         <constraints>
                             <constraint firstItem="8Zj-8p-oWd" firstAttribute="top" secondItem="M0W-Rk-n0M" secondAttribute="bottom" constant="100" id="Ina-Y4-rZs"/>
                             <constraint firstItem="M0W-Rk-n0M" firstAttribute="leading" secondItem="azt-VL-oOI" secondAttribute="leading" constant="10" id="Ko6-bg-zi6"/>
@@ -227,7 +225,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="Rrr-Tt-3MC">
                                 <rect key="frame" x="20" y="108" width="374" height="172"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="СЛОВО" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8R-s0-V8a">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="СЛОВО" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8R-s0-V8a">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -268,6 +266,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="ПРОПУСТИТЬ">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="skipPressed:" destination="Htg-8r-KMU" eventType="touchUpInside" id="art-Ht-KAV"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9J-WQ-qG6">
                                         <rect key="frame" x="0.0" y="100" width="374" height="50"/>
@@ -276,6 +277,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="СБРОСИТЬ">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="resetPressed:" destination="Htg-8r-KMU" eventType="touchUpInside" id="pYS-bg-BEY"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -337,8 +341,8 @@
         <namedColor name="Background">
             <color red="0.74900001287460327" green="0.054999999701976776" blue="0.054999999701976776" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

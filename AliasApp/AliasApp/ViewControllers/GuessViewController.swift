@@ -24,7 +24,7 @@ class GuessViewController: UIViewController {
         jokeManager.fetchJoke()
         timerStart()
         wordLabel.text = aliasBrain.updateWord(with: category)
-        scoreLabel.text = String(score)
+        scoreLabel.text = "Счет: \(String(score))"
     }
     
     // MARK: - @IBActions
@@ -34,6 +34,21 @@ class GuessViewController: UIViewController {
         }
         wordLabel.text = aliasBrain.updateWord(with: category)
         showMessage()
+        score += 1
+        scoreLabel.text = "Счет: \(String(score))"
+        timerRestart()
+    }
+    
+    @IBAction func skipPressed(_ sender: UIButton) {
+        wordLabel.text = aliasBrain.updateWord(with: category)
+        timerRestart()
+    }
+    
+    @IBAction func resetPressed(_ sender: UIButton) {
+        wordLabel.text = aliasBrain.updateWord(with: category)
+        score = 0
+        scoreLabel.text = "Счет: \(String(score))"
+        timerRestart()
     }
     
     //MARK: - Private Functions
@@ -44,8 +59,18 @@ class GuessViewController: UIViewController {
                 self.secondPassed += 1
             } else {
                 Timer.invalidate()
+                score = 0
+                scoreLabel.text = "Счет: \(String(score))"
+                wordLabel.text = aliasBrain.updateWord(with: category)
+                timerRestart()
             }
         }
+    }
+    private func timerRestart() {
+        timer.invalidate()
+        progressBar.progress = 0
+        secondPassed = 0
+        timerStart()
     }
     private func showMessage() {
         jokeManager.fetchJoke()
