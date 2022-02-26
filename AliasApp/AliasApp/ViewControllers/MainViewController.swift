@@ -16,10 +16,10 @@ class MainViewController: UIViewController {
     
     //MARK: - @IBActions
     @IBAction func rulesPressed(_ sender: UIButton) {
-        showMessage()
+        
     }
     @IBAction func playPressed(_ sender: UIButton) {
-        showMessage()
+        
     }
     
     //MARK: - Functions
@@ -29,6 +29,7 @@ class MainViewController: UIViewController {
     }
 }
 
+//MARK: - JokeManagerDelegate
 extension MainViewController: JokeManagerDelegate {
     func didUpdateJoke(_ jokeManager: JokeManager, joke: JokeModel) {
         DispatchQueue.main.async {

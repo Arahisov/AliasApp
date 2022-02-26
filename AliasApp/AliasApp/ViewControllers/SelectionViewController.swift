@@ -1,24 +1,16 @@
-
-import Foundation
 import UIKit
-
 
 class SelectionViewController: UIViewController {
     
+    //MARK: - Properties
     var aliasBrain = AliasBrain()
     var titleCategory = ""
     var word = ""
     
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         addVerticalGradientLayer(topColor: .systemBlue, bottomColor: .cyan)
-        
-    }
-    
-    @IBAction func Category(_ sender: UIButton) {
-        titleCategory = (sender.titleLabel?.text)!
-        performSegue(withIdentifier: "toGame", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -28,32 +20,16 @@ class SelectionViewController: UIViewController {
         }
     }
     
-//    @IBAction func scienceButton(_ sender: UIButton) {
-//        print("You chose the category Science")
-//    }
-//
-//    @IBAction func chemistryButton(_ sender: UIButton) {
-//        print("You chose the category Chemistry")
-//
-//    }
-//
-//    @IBAction func biologyButton(_ sender: UIButton) {
-//        print("You chose the category Biology")
-//    }
-//
-//    @IBAction func physicsButton(_ sender: UIButton) {
-//        print("You chose the category Physics")
-//    }
-
+    //MARK: - @IBActions
+    @IBAction func Category(_ sender: UIButton) {
+        titleCategory = (sender.titleLabel?.text)!
+        performSegue(withIdentifier: "toGame", sender: self)
+    }
 }
 
 //MARK: - Background
-
 extension SelectionViewController {
-    
-    // Background Gradient
     func addVerticalGradientLayer(topColor: UIColor, bottomColor: UIColor) {
-        
         let gradient = CAGradientLayer()
         gradient.frame = view.bounds
         gradient.colors = [topColor.cgColor, bottomColor.cgColor]
