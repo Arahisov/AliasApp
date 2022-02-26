@@ -2,9 +2,9 @@ import UIKit
 
 class GuessViewController: UIViewController {
     
-    //MARK: - @IBOutlet
+    //MARK: - @IBOutlets
     @IBOutlet weak var progressBar: UIProgressView!
-    @IBOutlet weak var worldLabel: UILabel!
+    @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
     //MARK: - Properties
@@ -13,26 +13,31 @@ class GuessViewController: UIViewController {
     var aliasBrain = AliasBrain()
     var score = 0
     var category = ""
-        
+    let jokeMessage = JokeMessage()
+    var jokeManager = JokeManager()
+    var jokeContent = ""
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        progressBar.progress = 0
+        jokeManager.delegate = self
+        jokeManager.fetchJoke()
         timerStart()
-        worldLabel.text = aliasBrain.updateWord(with: category)
+        wordLabel.text = aliasBrain.updateWord(with: category)
         scoreLabel.text = String(score)
     }
-      
-    // MARK: - answer done
+    
+    // MARK: - @IBActions
     @IBAction func answerPressed(_ sender: UIButton) {
         if let title = sender.titleLabel?.text {
             scoreLabel.text = String(aliasBrain.updateScore(title:title))
         }
-        worldLabel.text = aliasBrain.updateWord(with: category)
+        wordLabel.text = aliasBrain.updateWord(with: category)
+        showMessage()
     }
-  
-      //MARK: - Function 
-    func timerStart() {
+    
+    //MARK: - Private Functions
+    private func timerStart() {
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [self] (Timer) in
             if self.secondPassed <= 60 {
                 progressBar.progress = Float(secondPassed) / Float(60)
@@ -40,6 +45,19 @@ class GuessViewController: UIViewController {
             } else {
                 Timer.invalidate()
             }
+        }
+    }
+    private func showMessage() {
+        jokeManager.fetchJoke()
+        jokeMessage.showJokeAlert(from: jokeContent, to: self)
+    }
+}
+
+//MARK: - JokeManagerDelegate
+extension GuessViewController: JokeManagerDelegate {
+    func didUpdateJoke(_ jokeManager: JokeManager, joke: JokeModel) {
+        DispatchQueue.main.async {
+            self.jokeContent = joke.jokeContent
         }
     }
 }

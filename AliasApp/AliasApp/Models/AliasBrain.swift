@@ -1,10 +1,3 @@
-//
-//  AliasBrain.swift
-//  AliasApp
-//
-//  Created by Inna Kokorina on 24.02.2022.
-//
-
 import Foundation
 import AVFoundation
 
@@ -23,28 +16,25 @@ struct AliasBrain {
     var word = "Слово"
     var lastword = ""
     var player: AVAudioPlayer!
-    // MARK: - update word
     
+    // MARK: - update word
     mutating func updateWord(with category: String) -> String {
         switch category {
-            
         case "Chemistry" : word = chemistryWords.randomElement()!
         case "Physics" : word = physicsWords.randomElement()!
         case "Biology" : word = biologyWords.randomElement()!
         case "Science" : word = scienceWords.randomElement()!
         default : return "no category"
         }
-       
         if newArray.contains(word) == false {
             newArray.append(word)
-            print(newArray)
             if let newword = newArray.last {
                 lastword = newword
             }
         } else {
             if newArray.count < 7 {
-            print("повтор")
-            updateWord(with: category)
+                print("повтор")
+                updateWord(with: category)
             }
             else {
                 lastword = "Игра окончена вы набрали \(score) баллов"
@@ -55,11 +45,11 @@ struct AliasBrain {
         return lastword
     }
     
-
+    
     // MARK: - update score
     mutating func updateScore(title: String) -> Int {
-       
-            if (title == "Правильно")&&(newArray.isEmpty != true) {
+        
+        if (title == "Правильно")&&(newArray.isEmpty != true) {
             score += 1
             for i in specialWords {
                 if word == i {
@@ -77,8 +67,7 @@ struct AliasBrain {
         return score
     }
     
-// MARK: - audioPlayer
-    
+    // MARK: - audioPlayer
     mutating func audioPlayer (name sound : String){
         let url = Bundle.main.url(forResource: sound, withExtension:"wav")
         player = try! AVAudioPlayer(contentsOf: url!)
