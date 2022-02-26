@@ -24,32 +24,23 @@ class GuessViewController: UIViewController {
         jokeManager.fetchJoke()
         timerStart()
         wordLabel.text = aliasBrain.updateWord(with: category)
-        scoreLabel.text = "Счет: \(String(score))"
+        scoreLabel.text = String(score)
     }
     
     // MARK: - @IBActions
-    @IBAction func answerPressed(_ sender: UIButton) {
+    
+    
+    
+    @IBAction func answerDone(_ sender: UIButton) {
         if let title = sender.titleLabel?.text {
             scoreLabel.text = String(aliasBrain.updateScore(title:title))
         }
         wordLabel.text = aliasBrain.updateWord(with: category)
+        
         showMessage()
-        score += 1
-        scoreLabel.text = "Счет: \(String(score))"
         timerRestart()
     }
     
-    @IBAction func skipPressed(_ sender: UIButton) {
-        wordLabel.text = aliasBrain.updateWord(with: category)
-        timerRestart()
-    }
-    
-    @IBAction func resetPressed(_ sender: UIButton) {
-        wordLabel.text = aliasBrain.updateWord(with: category)
-        score = 0
-        scoreLabel.text = "Счет: \(String(score))"
-        timerRestart()
-    }
     
     //MARK: - Private Functions
     private func timerStart() {

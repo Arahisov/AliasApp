@@ -5,7 +5,7 @@ struct AliasBrain {
     
     let chemistryWords  = ["Атом","Валентность", "Магний", "Вещество", "Водорорд", "Заряд", "Молекула"]
     let scienceWords  = ["Физика","Химия", "Доклад", "Тезис", "Диссертация", "Микроскоп", "Эксперимент"]
-    let biologyWords  = ["Фотосинтез","Рсатение", "Хлорфил", "Лист", "Клетка", "Соцветие", "Бактерия"]
+    let biologyWords  = ["Фотосинтез","Растение", "Хлорофилл", "Лист", "Клетка", "Соцветие", "Бактерия"]
     let physicsWords  = ["Металл","Материя", "Протон", "Давление", "Сопротивление", "Частицы", "Магнит"]
     let category = ["Химия", "Наука", "Биология", "Физика"]
     let specialWords = ["Валентность", "Диссертация","Фотосинтез","Протон"]
@@ -28,6 +28,7 @@ struct AliasBrain {
         }
         if newArray.contains(word) == false {
             newArray.append(word)
+            print(newArray)
             if let newword = newArray.last {
                 lastword = newword
             }
@@ -49,7 +50,7 @@ struct AliasBrain {
     // MARK: - update score
     mutating func updateScore(title: String) -> Int {
         
-        if (title == "Правильно")&&(newArray.isEmpty != true) {
+        if (title == "ПРАВИЛЬНО")&&(newArray.isEmpty != true) {
             score += 1
             for i in specialWords {
                 if word == i {
@@ -57,10 +58,10 @@ struct AliasBrain {
                 }
                 audioPlayer(name: "G")
             }
-        } else if (title == "Пропустить")&&(newArray.isEmpty != true) {
+        } else if (title == "ПРОПУСТИТЬ")&&(newArray.isEmpty != true) {
             score -= 1
             audioPlayer(name: "C")
-        } else if title == "Сбросить" {
+        } else if title == "СБРОСИТЬ" {
             score = 0
             newArray = []
         }
