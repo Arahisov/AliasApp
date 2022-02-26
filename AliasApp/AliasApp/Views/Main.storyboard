@@ -95,9 +95,10 @@
                                                     <constraint firstAttribute="width" constant="150" id="CZE-UD-rbX"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" image="ScienceButton"/>
+                                                <state key="normal" title="Science" image="ScienceButton"/>
                                                 <connections>
-                                                    <action selector="Category:" destination="Dby-g1-X4Z" eventType="touchUpInside" id="5af-PW-hQz"/>
+                                                    <action selector="categoryButtonPressed:" destination="Dby-g1-X4Z" eventType="touchUpInside" id="SW5-Xm-qnh"/>
+                                                    <segue destination="Htg-8r-KMU" kind="show" identifier="toGame" id="JOc-Hj-pGF"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggp-iZ-ofU">
@@ -107,9 +108,9 @@
                                                     <constraint firstAttribute="width" constant="150" id="pXd-R6-vdQ"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" image="ChemistryButton"/>
+                                                <state key="normal" title="Chemistry" image="ChemistryButton"/>
                                                 <connections>
-                                                    <action selector="Category:" destination="Dby-g1-X4Z" eventType="touchUpInside" id="B2R-nm-Kc5"/>
+                                                    <action selector="categoryButtonPressed:" destination="Dby-g1-X4Z" eventType="touchUpInside" id="lmO-81-a3s"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -124,9 +125,9 @@
                                                     <constraint firstAttribute="width" constant="150" id="nzX-UD-6BS"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" image="BiologyButton"/>
+                                                <state key="normal" title="Biology" image="BiologyButton"/>
                                                 <connections>
-                                                    <action selector="Category:" destination="Dby-g1-X4Z" eventType="touchUpInside" id="YsD-AK-MMF"/>
+                                                    <action selector="categoryButtonPressed:" destination="Dby-g1-X4Z" eventType="touchUpInside" id="hba-3B-x7y"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtQ-Uq-YIo">
@@ -136,9 +137,9 @@
                                                     <constraint firstAttribute="width" constant="150" id="kRV-Q9-nZx"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" image="PhysicsButton"/>
+                                                <state key="normal" title="Physics" image="PhysicsButton"/>
                                                 <connections>
-                                                    <action selector="Category:" destination="Dby-g1-X4Z" eventType="touchUpInside" id="Tck-gn-UAh"/>
+                                                    <action selector="categoryButtonPressed:" destination="Dby-g1-X4Z" eventType="touchUpInside" id="7Bh-cB-1RX"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -178,7 +179,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="wmN-QJ-kfj"/>
                                 </constraints>
-                                <mutableString key="text">Игроки делятся на команды (от двух человек), решают вопрос очередности, договариваются внутри команды, кто будет объясняющим, а кто воспринимающим, определяют номера слов на карточках, ставят песочные часы и в течение минуты пытаются понять друг друга. Сколько успели отгадать — столько очков достанется.</mutableString>
+                                <string key="text">Игроки делятся на команды (от двух человек), решают вопрос очередности, договариваются внутри команды, кто будет объясняющим, а кто воспринимающим, определяют номера слов на карточках, ставят песочные часы и в течение минуты пытаются понять друг друга. Сколько успели отгадать — столько очков достанется.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -224,7 +225,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="Rrr-Tt-3MC">
-                                <rect key="frame" x="20" y="64" width="374" height="137"/>
+                                <rect key="frame" x="20" y="108" width="374" height="137"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8R-s0-V8a">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
@@ -251,6 +252,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="ОТВЕТ">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="answerPressed:" destination="Htg-8r-KMU" eventType="touchUpInside" id="17H-E7-LM6"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="R4W-nz-skN"/>
@@ -277,7 +281,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Weh-M0-1Ph" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2402.898550724638" y="87.723214285714278"/>
+            <point key="canvasLocation" x="2396" y="88"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iLg-vo-lCn">

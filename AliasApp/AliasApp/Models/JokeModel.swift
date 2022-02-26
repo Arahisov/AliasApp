@@ -1,6 +1,6 @@
 import Foundation
 
-//MARK: - Model
+//MARK: - JokeModel
 struct JokeModel {
     let jokeContent: String
 }

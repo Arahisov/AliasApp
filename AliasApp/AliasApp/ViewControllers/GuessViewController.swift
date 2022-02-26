@@ -13,11 +13,15 @@ class GuessViewController: UIViewController {
     var aliasBrain = AliasBrain()
     var score = 0
     var category = ""
+    let jokeMessage = JokeMessage()
+    var jokeManager = JokeManager()
+    var jokeContent = ""
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        progressBar.progress = 0
+        jokeManager.delegate = self
+        jokeManager.fetchJoke()
         timerStart()
         wordLabel.text = aliasBrain.updateWord(with: category)
         scoreLabel.text = String(score)
@@ -29,10 +33,11 @@ class GuessViewController: UIViewController {
             scoreLabel.text = String(aliasBrain.updateScore(title:title))
         }
         wordLabel.text = aliasBrain.updateWord(with: category)
+        showMessage()
     }
     
-    //MARK: - Functions
-    func timerStart() {
+    //MARK: - Private Functions
+    private func timerStart() {
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [self] (Timer) in
             if self.secondPassed <= 60 {
                 progressBar.progress = Float(secondPassed) / Float(60)
@@ -40,6 +45,19 @@ class GuessViewController: UIViewController {
             } else {
                 Timer.invalidate()
             }
+        }
+    }
+    private func showMessage() {
+        jokeManager.fetchJoke()
+        jokeMessage.showJokeAlert(from: jokeContent, to: self)
+    }
+}
+
+//MARK: - JokeManagerDelegate
+extension GuessViewController: JokeManagerDelegate {
+    func didUpdateJoke(_ jokeManager: JokeManager, joke: JokeModel) {
+        DispatchQueue.main.async {
+            self.jokeContent = joke.jokeContent
         }
     }
 }

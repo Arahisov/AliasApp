@@ -1,6 +1,6 @@
 import Foundation
 
-//MARK: - Data
+//MARK: - JokeData
 struct JokeData: Codable {
     let setup: String
 }

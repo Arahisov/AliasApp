@@ -1,6 +1,6 @@
 import Foundation
 
-//MARK: - DataManager
+//MARK: - JokeManager
 protocol JokeManagerDelegate {
     func didUpdateJoke(_ jokeManager: JokeManager, joke: JokeModel)
 }
