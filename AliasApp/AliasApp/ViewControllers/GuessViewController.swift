@@ -7,14 +7,16 @@ class GuessViewController: UIViewController {
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
+    //MARK: - Instance Properties
+    let jokeMessage = JokeMessage()
+    var jokeManager = JokeManager()
+    var aliasBrain = AliasBrain()
+
     //MARK: - Properties
     var secondPassed = 0
     var timer = Timer()
-    var aliasBrain = AliasBrain()
     var score = 0
     var category = ""
-    let jokeMessage = JokeMessage()
-    var jokeManager = JokeManager()
     var jokeContent = ""
     
     //MARK: - Lifecycle
@@ -28,19 +30,14 @@ class GuessViewController: UIViewController {
     }
     
     // MARK: - @IBActions
-    
-    
-    
     @IBAction func answerDone(_ sender: UIButton) {
         if let title = sender.titleLabel?.text {
             scoreLabel.text = String(aliasBrain.updateScore(title:title))
         }
         wordLabel.text = aliasBrain.updateWord(with: category)
-        
         showMessage()
         timerRestart()
     }
-    
     
     //MARK: - Private Functions
     private func timerStart() {
@@ -65,7 +62,7 @@ class GuessViewController: UIViewController {
     }
     private func showMessage() {
         jokeManager.fetchJoke()
-        jokeMessage.showJokeAlert(from: jokeContent, to: self)
+        jokeMessage.showJokeMessage(from: jokeContent, to: self)
     }
 }
 

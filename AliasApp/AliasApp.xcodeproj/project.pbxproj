@@ -20,8 +20,8 @@
 		6CA735F327C484DF0017A1E7 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA735F227C484DF0017A1E7 /* RulesViewController.swift */; };
 		6CA735F527C4852A0017A1E7 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA735F427C4852A0017A1E7 /* SelectionViewController.swift */; };
 		6CA735F727C485650017A1E7 /* GuessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA735F627C485650017A1E7 /* GuessViewController.swift */; };
+		6CC286FA27CB5AF200BEAEBC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC286F927CB5AF200BEAEBC /* Extensions.swift */; };
 		C30FBDDF27C7B15800C3E05D /* AliasBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30FBDDE27C7B15700C3E05D /* AliasBrain.swift */; };
-		C37C2A6527C7E59B00317FE0 /* AliasModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37C2A6427C7E59B00317FE0 /* AliasModel.swift */; };
 		C37F52B827C8E4B300B5155B /* G.wav in Resources */ = {isa = PBXBuildFile; fileRef = C37F52B727C8E4B300B5155B /* G.wav */; };
 		C37F52BC27C8E59800B5155B /* C.wav in Resources */ = {isa = PBXBuildFile; fileRef = C37F52BB27C8E59800B5155B /* C.wav */; };
 /* End PBXBuildFile section */
@@ -42,8 +42,8 @@
 		6CA735F227C484DF0017A1E7 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		6CA735F427C4852A0017A1E7 /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
 		6CA735F627C485650017A1E7 /* GuessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessViewController.swift; sourceTree = "<group>"; };
+		6CC286F927CB5AF200BEAEBC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C30FBDDE27C7B15700C3E05D /* AliasBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AliasBrain.swift; sourceTree = "<group>"; };
-		C37C2A6427C7E59B00317FE0 /* AliasModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AliasModel.swift; sourceTree = "<group>"; };
 		C37F52B727C8E4B300B5155B /* G.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = G.wav; sourceTree = "<group>"; };
 		C37F52BB27C8E59800B5155B /* C.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = C.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +81,7 @@
 				6CA735EF27C484270017A1E7 /* Models */,
 				6CA735F127C484690017A1E7 /* Views */,
 				6CA735F027C484380017A1E7 /* ViewControllers */,
+				6CC286FB27CB5B0C00BEAEBC /* Helpers */,
 				6C3C750E27C41C12000EF720 /* SupportingFiles */,
 			);
 			path = AliasApp;
@@ -108,7 +109,6 @@
 				6C2B259427C7F0F2003F3219 /* JokeModel.swift */,
 				6C3264DF27C5E490001312E9 /* JokeMessage.swift */,
 				C30FBDDE27C7B15700C3E05D /* AliasBrain.swift */,
-				C37C2A6427C7E59B00317FE0 /* AliasModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -130,6 +130,14 @@
 				6C17362427C973EC0048AD06 /* Main.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		6CC286FB27CB5B0C00BEAEBC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6CC286F927CB5AF200BEAEBC /* Extensions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,10 +221,10 @@
 				6CA735F727C485650017A1E7 /* GuessViewController.swift in Sources */,
 				6CA735F527C4852A0017A1E7 /* SelectionViewController.swift in Sources */,
 				6C3C74FF27C41B89000EF720 /* MainViewController.swift in Sources */,
+				6CC286FA27CB5AF200BEAEBC /* Extensions.swift in Sources */,
 				6C2B259127C7F0AE003F3219 /* JokeData.swift in Sources */,
 				6C3C74FB27C41B89000EF720 /* AppDelegate.swift in Sources */,
 				6CA735F327C484DF0017A1E7 /* RulesViewController.swift in Sources */,
-				C37C2A6527C7E59B00317FE0 /* AliasModel.swift in Sources */,
 				6C3C74FD27C41B89000EF720 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

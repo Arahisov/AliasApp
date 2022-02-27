@@ -2,7 +2,6 @@ import Foundation
 import AVFoundation
 
 struct AliasBrain {
-    
     let chemistryWords  = ["Атом","Валентность", "Магний", "Вещество", "Водорорд", "Заряд", "Молекула"]
     let scienceWords  = ["Физика","Химия", "Доклад", "Тезис", "Диссертация", "Микроскоп", "Эксперимент"]
     let biologyWords  = ["Фотосинтез","Растение", "Хлорофилл", "Лист", "Клетка", "Соцветие", "Бактерия"]
@@ -28,13 +27,11 @@ struct AliasBrain {
         }
         if newArray.contains(word) == false {
             newArray.append(word)
-            print(newArray)
             if let newword = newArray.last {
                 lastword = newword
             }
         } else {
             if newArray.count < 7 {
-                print("повтор")
                 updateWord(with: category)
             }
             else {
@@ -46,10 +43,8 @@ struct AliasBrain {
         return lastword
     }
     
-    
     // MARK: - update score
     mutating func updateScore(title: String) -> Int {
-        
         if (title == "ПРАВИЛЬНО")&&(newArray.isEmpty != true) {
             score += 1
             for i in specialWords {
