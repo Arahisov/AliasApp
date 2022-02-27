@@ -98,7 +98,6 @@
                                                 <state key="normal" title="Science" image="ScienceButton"/>
                                                 <connections>
                                                     <action selector="categoryButtonPressed:" destination="Dby-g1-X4Z" eventType="touchUpInside" id="SW5-Xm-qnh"/>
-                                                    <segue destination="Htg-8r-KMU" kind="show" identifier="toGame" id="JOc-Hj-pGF"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggp-iZ-ofU">
@@ -160,6 +159,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ax1-mQ-T36"/>
+                    <connections>
+                        <segue destination="Htg-8r-KMU" kind="show" identifier="toGame" id="Ieq-3p-R8v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GY6-PX-uAc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
