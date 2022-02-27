@@ -26,7 +26,7 @@ class GuessViewController: UIViewController {
         jokeManager.fetchJoke()
         timerStart()
         wordLabel.text = aliasBrain.updateWord(with: category)
-        scoreLabel.text = String(score)
+        scoreLabel.text = "Счет: \(String(score))"
     }
     
     // MARK: - @IBActions
@@ -36,7 +36,6 @@ class GuessViewController: UIViewController {
         }
         wordLabel.text = aliasBrain.updateWord(with: category)
         showMessage()
-        timerRestart()
     }
     
     //MARK: - Private Functions
